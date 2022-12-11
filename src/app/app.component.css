@@ -1,0 +1,248 @@
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: 1px solid #E5E5E5;
+  padding: 25px 0;
+}
+.header__row {
+  display: flex;
+  align-items: center;
+}
+.header__menu {
+  margin-left: 244px;
+}
+
+.menu__list {
+  display: flex;
+}
+.menu__item {
+  margin-right: 115px;
+}
+.menu__item:last-child {
+  margin: 0;
+}
+.menu__link {
+  font-size: 15px;
+  color: #030305;
+}
+.menu__link:hover {
+  border-bottom: 2px solid black;
+}
+
+.page {
+  flex: 1 1 auto;
+}
+
+.first-screen {
+  background-image: url("../assets/img/background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 104px 0 154px 0;
+}
+.first-screen__row {
+  display: flex;
+}
+.first-screen__content {
+  max-width: 855px;
+}
+.first-screen__title {
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 110%;
+  color: #030305;
+  margin-bottom: 40px;
+}
+.first-screen__text {
+  max-width: 502px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 130%;
+  color: #030305;
+}
+
+.button {
+  padding: 20px;
+  width: 334px;
+  height: 64px;
+  background: #030305;
+  text-align: center;
+  transition: background-color .5s;
+  color: #FFFFFF;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.button:hover:not(:disabled) {
+  background-color: #575757;
+}
+.button:disabled {
+  cursor: not-allowed;
+  color: gray;
+  background-color: #343434;
+}
+
+.second-screen {
+  padding: 40px 0 100px 0;
+}
+.second-screen__title {
+  margin-bottom: 40px;
+}
+.second-screen__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 -12px;
+  flex-wrap: wrap;
+}
+.second-screen__column {
+  flex: 0 1 33.333%;
+  padding: 0 12px;
+}
+.second-screen__content {
+  text-align: center;
+}
+.second-screen__img {
+  margin-bottom: 15px;
+  transition: all 0.3s;
+}
+.second-screen__img:hover {
+  transform: scale(1.1);
+}
+.second-screen__button {
+  width: 100%;
+  padding: 15px;
+  height: 54px;
+}
+
+.sub-title {
+  font-weight: bold;
+  font-size: 60px;
+  color: #030305;
+}
+
+.car-toggle {
+  display: flex;
+  width: 195px;
+  border: 1px solid gray;
+  margin-top: 20px;
+}
+
+.car-toggle div {
+  padding: 20px;
+  background: white;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: black;
+  transition: background-color .5s;
+  cursor: pointer;
+}
+
+.car-toggle div.active {
+  background: #030305;
+  color: #FFFFFF;
+}
+
+.second-screen .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.info__title {
+  margin-bottom: 17px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: #030305;
+}
+.info__row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 13px;
+}
+.info__img {
+  margin-bottom: 10px;
+}
+.info__sub-title {
+  letter-spacing: 0.02em;
+  color: #030305;
+  font-weight: bold;
+}
+
+.third-screen__title {
+  line-height: 70px;
+  margin-bottom: 20px;
+}
+.third-screen__sub-title {
+  font-size: 16px;
+  line-height: 130%;
+  color: #5D5D5F;
+}
+.third-screen__row {
+  display: flex;
+  align-items: center;
+  margin: 0 -28.5px;
+}
+.third-screen__column {
+  flex: 0 1 50%;
+  padding: 0 28.5px;
+}
+.third-screen__form {
+  width: 100%;
+}
+.third-screen__input {
+  padding: 22px 18px;
+  background: #FFFFFF;
+  border: 1px solid #5D5D5F;
+  width: 100%;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 15px;
+}
+.third-screen__input::placeholder {
+  color: #5D5D5F;
+}
+.third-screen__button {
+  height: 64px;
+  padding: 20px;
+}
+.third-screen__img {
+  overflow: hidden;
+}
+
+.footer {
+  border-top: 1px solid #E5E5E5;
+}
+.footer__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 0;
+}
+.footer__info {
+  font-size: 15px;
+  color: #030305;
+}
+
+.third-screen__input.ng-touched.ng-valid {
+  border: 1px solid #5D5D5F;
+}
+.third-screen__input.ng-touched.ng-invalid {
+  border: 1px solid red;
+}

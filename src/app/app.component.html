@@ -1,0 +1,142 @@
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header__row">
+          <div class="header__logo">
+            <img src="assets/img/logo.png" alt="logo">
+          </div>
+          <nav class="header__menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#" class="menu__link">Главная</a>
+              </li>
+              <li class="menu__item">
+                <a href="#cars" class="menu__link">Автомобили</a>
+              </li>
+              <li class="menu__item">
+                <a href="#price" class="menu__link">Бронирование авто</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="page">
+      <section class="first-screen" [ngStyle]="bgPos">
+        <div class="container">
+          <div class="first-screen__row">
+            <div class="first-screen__column">
+              <div class="first-screen__content">
+                <div class="first-screen__title">
+                  <span>Аренда премиальных автомобилей</span>
+                </div>
+                <div class="first-screen__text">
+                  <p>В нашем клубе имеется солидная коллекция спортивных автомобилей — от достаточно распространенных серийных машин до настоящего гоночного эксклюзива. Воспользуйтесь уникальной возможностью побывать за рулем настоящей легенды и узнать, на что она способна за пределами гоночной трассы!</p>
+                </div>
+                <button class="first-screen__button button" (click)="goScroll(cars)">
+                  Посмотреть автомобили
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="second-screen" id="cars" #cars>
+        <div class="container">
+          <div class="second-screen__title sub-title">
+            <span>Наш автопарк</span>
+            <div class="car-toggle">
+              <div [ngClass]="{active: category === 'sport'}" (click)="toggleCategory('sport')">Sport</div>
+              <div [ngClass]="{active: category === 'luxury'}" (click)="toggleCategory('luxury')">Luxury</div>
+            </div>
+          </div>
+          <div class="second-screen__row">
+            <div class="second-screen__column" *ngFor="let car of carsData">
+              <div class="second-screen__content">
+                <img src="{{car.image}}" alt="car 1" class="second-screen__img">
+                <div class="second-screen__info">
+                  <div class="info__title">
+                    <span>{{car.name}}</span>
+                  </div>
+                  <div class="info__row">
+                    <div class="info__column">
+                      <img src="assets/img/gear.png" alt="gear" class="info__img">
+                      <div class="info__sub-title">
+                        <span>Привод</span>
+                      </div>
+                      <div class="info__attribute">
+                        <span>полный</span>
+                      </div>
+                    </div>
+                    <div class="info__column">
+                      <img src="assets/img/wheel.png" alt="wheel" class="info__img">
+                      <div class="info__sub-title">
+                        <span>Двигатель</span>
+                      </div>
+                      <div class="info__attribute">
+                        <span>{{car.engine}} л.с</span>
+                      </div>
+                    </div>
+                    <div class="info__column">
+                      <img src="assets/img/belt.png" alt="belt" class="info__img">
+                      <div class="info__sub-title">
+                        <span>Кол-во мест</span>
+                      </div>
+                      <div class="info__attribute">
+                        <span>{{car.places}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="second-screen__button button" (click)="goScroll(price, car)">
+                  Забронировать
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="third-screen" id="price" #price>
+        <div class="container">
+          <div class="third-screen__title sub-title">
+            <span>Узнать цену и забронировать</span>
+          </div>
+          <div class="third-screen__sub-title">
+            <span>Заполните данные, и мы перезвоним вам для уточнения всех деталей бронирования</span>
+          </div>
+          <div class="third-screen__row">
+            <div class="third-screen__column">
+              <form class="third-screen__form" [formGroup]="priceForm">
+                <input type="text" class="third-screen__input" placeholder="Ваше имя" formControlName="name">
+                <input type="text" class="third-screen__input" placeholder="Ваш телефон" formControlName="phone">
+                <input type="text" class="third-screen__input" placeholder="Автомобиль, который вас интересует" formControlName="car">
+                <button class="third-screen__button button" (click)="onSubmit()" [disabled]="!priceForm.valid">
+                  Узнать цену
+                </button>
+              </form>
+            </div>
+            <div class="third-screen__column">
+              <div class="third-screen__img">
+                <img src="assets/img/rolls.png" alt="car" id="price-image" [ngStyle]="trans">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__row">
+          <div class="footer__logo">
+            <img src="assets/img/logo.png" alt="logo">
+          </div>
+          <div class="footer__info">
+            <span>Ваши права защищены</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/script.js"></script>
+</body>
